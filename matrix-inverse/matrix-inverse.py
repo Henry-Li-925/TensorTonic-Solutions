@@ -8,11 +8,12 @@ def matrix_inverse(A):
     id_mat = np.identity(np.array(A).shape[0])
     # square check 
     if np.array(A).shape[0] != np.array(A).shape[1]:
-        return None
-    # singularity check
+        return None 
+    # avoid explicit inversion, instead, solve Ax = I
+    # np.linalg.solve(A, id_mat) internally checks sigularity
     try:
         return np.linalg.solve(A, id_mat)
     except:
         return None
-    # avoid explicit inversion, instead, solve Ax = I
+
     
