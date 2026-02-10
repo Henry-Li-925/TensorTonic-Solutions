@@ -11,8 +11,8 @@ def matrix_inverse(A):
         return None
     # singularity check
     try:
-        np.linalg.solve(A, id_mat)
+        return np.linalg.solve(A, id_mat)
     except:
         return None
     # avoid explicit inversion, instead, solve Ax = I
-    return np.linalg.solve(A, id_mat)
+    
